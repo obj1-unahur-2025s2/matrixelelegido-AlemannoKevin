@@ -30,6 +30,26 @@ le agregas algo que ya esta, no pasa nada, no tira error*/
     }
 }
 */
-object hola {
+object neo {
+    var energia = 100
+    method esElElegido() = true
+    method saltar() {
+        energia = energia/2
+    }
+    method vitalidad() = energia/10
+}
 
+object morfeo {
+    method esElElegido()=false
+    var vitalidad = 8
+}
+
+object trinity {
+    method esElElegido()=false
+    var vitalidad = 0
+    method vitalidad() = vitalidad
+}
+
+object nave {
+    const pasajeros = [neo, morfeo, trinity]
 }

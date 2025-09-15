@@ -30,6 +30,7 @@ le agregas algo que ya esta, no pasa nada, no tira error*/
     }
 }
 */
+//property??
 object neo {
     var energia = 100
     method esElElegido() = true
@@ -40,14 +41,20 @@ object neo {
 }
 
 object morfeo {
-    method esElElegido()=false
     var vitalidad = 8
+    var cansado = false
+    method esElElegido()=false
+    method saltar() {
+        vitalidad -= 1
+        cansado = not cansado
+    }
+    method estaCansado() = cansado
+    method vitalidad() = vitalidad
 }
 
 object trinity {
     method esElElegido()=false
-    var vitalidad = 0
-    method vitalidad() = vitalidad
+    method vitalidad() = 0
 }
 
 object nave {

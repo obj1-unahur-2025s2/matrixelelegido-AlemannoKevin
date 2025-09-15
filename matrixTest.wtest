@@ -6,12 +6,29 @@ describe "Testeamos a Neo" {
     assert.that(neo.esElElegido())
   }
 
-  test "Vitalidad inicial de neo" {
+  test "Vitalidad inicial" {
     assert.equals(10, neo.vitalidad())
   }
 
-  test "Vitalidad de neo baja al saltar" {
+  test "Vitalidad baja al saltar" {
     neo.saltar()
     assert.equals(5, neo.vitalidad())
+  }
+}
+
+describe "Testeamos a Morfeo" {
+  
+  test "Vitalidad y cansancio despues de saltar" {
+    morfeo.saltar()
+    assert.equals(7, morfeo.vitalidad())
+    assert.that(morfeo.estaCansado())
+  }
+
+  test "No es el elegido" {
+    assert.that(not morfeo.esElElegido())
+  }
+
+  test "Vitalidad inicial" {
+    assert.equals(8, morfeo.vitalidad())
   }
 }

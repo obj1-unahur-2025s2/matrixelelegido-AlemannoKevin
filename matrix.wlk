@@ -66,4 +66,16 @@ object nave {
         return pasajeros.size()
     }
     method pasajeroConMayorVitalidad() = pasajeros.max({p => p.vitalidad()})
+    /*method esEquilibrada() = 
+        pasajeros.map({p => p.vitalidad()*2}).all(
+        {v => v < self.pasajeroConMayorVitalidad().vitalidad()})*/
+    method estaElElegido()= pasajeros.any({p=>p.esElElegido()})
+    method chocar() {
+        pasajeros.forEach({p=>p.saltar()})
+        pasajeros.clear()
+    }
+    method pasajerosQueNoSonElegidos() = pasajeros.filter({p=>not p.esElElegido()})
+    method acelerar() {
+        self.pasajerosQueNoSonElegidos().forEach({p=> p.saltar()})
+    }
 }
